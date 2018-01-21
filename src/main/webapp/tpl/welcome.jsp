@@ -8,5 +8,6 @@
 </head>
 <body>
 名字：${name}
+用户：${user}
 </body>
 </html>

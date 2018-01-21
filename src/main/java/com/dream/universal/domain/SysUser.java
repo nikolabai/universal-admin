@@ -1,9 +1,16 @@
 package com.dream.universal.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SysUser {
-    private Long id;
+public class SysUser implements Serializable{
+	
+    /**
+	 * 用redis  需要序列化
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Long id;
 
     private String email;
 
@@ -132,4 +139,13 @@ public class SysUser {
     public void setPasswordSugar(String passwordSugar) {
         this.passwordSugar = passwordSugar == null ? null : passwordSugar.trim();
     }
+
+	@Override
+	public String toString() {
+		return "SysUser [id=" + id + ", email=" + email + ", enabled=" + enabled + ", password=" + password + ", phone="
+				+ phone + ", realName=" + realName + ", lastLoginTime=" + lastLoginTime + ", createTime=" + createTime
+				+ ", updateTime=" + updateTime + ", username=" + username + ", orgId=" + orgId + ", modifyPasswordTime="
+				+ modifyPasswordTime + ", passwordSugar=" + passwordSugar + "]";
+	}
+    
 }

@@ -8,6 +8,8 @@ target/
 .project
 .settings
 .springBeans
+readme.txt
+.gitignore
 
 ### IntelliJ IDEA ###
 .idea
