@@ -24,9 +24,9 @@ public class RedisConfig {
 	
     //必须配置     redis 连接池配置    change "maxActive" -> "maxTotal" and "maxWait" -> "maxWaitMillis"
     @Bean(name= "jedis.pool.config")  
-    public JedisPoolConfig jedisPoolConfig (@Value("${spring.redis.maxTotal}")int maxTotal,  
-			                                @Value("${spring.redis.maxIdle}")int maxIdle,  
-			                                @Value("${spring.redis.maxWaitMillis}")int maxWaitMillis) {  
+    public JedisPoolConfig jedisPoolConfig (@Value("${spring.redis.pool.max-active}")int maxTotal,  
+			                                @Value("${spring.redis.pool.max-idle}")int maxIdle,  
+			                                @Value("${spring.redis.pool.max-wait}")int maxWaitMillis) {  
         JedisPoolConfig config = new JedisPoolConfig();  
         config.setMaxTotal(maxTotal);  
         config.setMaxIdle(maxIdle);  

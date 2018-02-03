@@ -24,7 +24,7 @@ public class WelcomeServiceImpl implements WelcomeService{
 	}
 
 	@Override
-	@Cacheable
+	@Cacheable(key="#id")
 	public SysUser selectUser(long id) {
 		SysUser user= sysUserMapper.selectByPrimaryKey(id);
 		return user;
